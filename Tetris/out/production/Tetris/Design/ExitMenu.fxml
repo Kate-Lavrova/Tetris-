@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="150.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.Exit">
+   <children>
+      <ImageView fitHeight="620.0" fitWidth="570.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../for_Tetris/MainMenuBackground.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="42.0" layoutY="20.0" prefHeight="50.0" prefWidth="260.0" text="Do you want close the game?" styleClass="Label" stylesheets="@ApplicationStyle.css">
+      </Label>
+      <Button contentDisplay="CENTER" layoutX="10.0" layoutY="86.0" mnemonicParsing="false" onAction="#cancelButtonEvent" prefHeight="51.0" prefWidth="131.0" styleClass="Button" stylesheets="@ApplicationStyle.css" text="No" textAlignment="JUSTIFY">
+      </Button>
+      <Button contentDisplay="CENTER" layoutX="171.0" layoutY="86.0" mnemonicParsing="false" onAction="#yesButtonEvent" prefHeight="51.0" prefWidth="131.0" styleClass="Button" stylesheets="@ApplicationStyle.css" text="Yes" textAlignment="JUSTIFY" />
+   </children>
+</AnchorPane>

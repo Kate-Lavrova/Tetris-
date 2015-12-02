@@ -1,0 +1,51 @@
+.emptyCell{
+    -fx-background-color: transparent;
+}
+
+.busyCellWhite{
+    -fx-background-color: PINK;
+    -fx-border-color: BLACK;
+}
+
+.gameFieldFrame{
+    -fx-border-color: "PINK";
+    -fx-border-width: 4;
+    -fx-background-color: transparent;
+    -fx-opacity: 1;
+}
+
+.Button {
+    -fx-background-color: transparent;
+    -fx-font-weight: 800;
+    -fx-font-size: 18px;
+    -fx-text-fill: BLUE;
+    -fx-background-color:     #000000,  linear-gradient(#4682b4 0%, #1f2429 20%, #191d22 100%), linear-gradient(#4682b4, #191d22), radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+// "    -fx-text-fill: white;\n" +
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+//  "    -fx-font-family: \"Arial\";\n" +
+-fx-text-fill: linear-gradient(white, #d0d0d0);
+
+    -fx-padding: 10 20 10 20;
+
+
+}
+
+.Button:hover {
+    -fx-text-fill: PINK;
+}
+
+
+.Label{
+    -fx-font-weight: 800;
+    -fx-font-size: 18px;
+    -fx-text-fill: PINK;
+}
+
+.LoosingLabel{
+    -fx-font-weight: 900;
+    -fx-font-size: 40px;
+    -fx-text-fill: BLUE;
+}
+

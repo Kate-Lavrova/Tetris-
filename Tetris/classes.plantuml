@@ -1,0 +1,256 @@
+@startuml
+top to bottom direction
+skinparam headerFontSize 30
+skinparam headerFontStyle bold
+skinparam classAttributeIconSize 0
+scale 1.0
+package Game {
+package Game.Types_figures {
+class Game.Types_figures.f5 <? extends Figure>  {
+.. Methods ..
++figureNextRotatePosition() : Point[]
++setStartPosition(Point) : void
+}
+class Game.Types_figures.f6 <? extends Figure>  {
+.. Methods ..
++figureNextRotatePosition() : Point[]
++setStartPosition(Point) : void
+}
+class Game.Types_figures.f3 <? extends Figure>  {
+.. Methods ..
++figureNextRotatePosition() : Point[]
++setStartPosition(Point) : void
+}
+class Game.Types_figures.f7 <? extends Figure>  {
+.. Methods ..
++figureNextRotatePosition() : Point[]
++setStartPosition(Point) : void
+}
+class Game.Types_figures.f1 <? extends Figure>  {
+.. Methods ..
++setStartPosition(Point) : void
+}
+class Game.Types_figures.f4 <? extends Figure>  {
+.. Methods ..
++figureNextRotatePosition() : Point[]
++setStartPosition(Point) : void
+}
+class Game.Types_figures.f2 <? extends Figure>  {
+.. Methods ..
++figureNextRotatePosition() : Point[]
++setStartPosition(Point) : void
+}
+
+}
+class Game.Main {
+.. Fields  ..
+-playingField : Playing_Field
+-replayMenu : ReplayMenu
+-stage : Stage
+-tempStage : Stage
+.. Methods ..
++closeExitMenu() : void
++getStage() : Window
++loadGame() : void
++runExitMenu() : void
++runGameField() : void
++runMainMenu() : void
++runReplay(File) : void
++runReplayMenu() : void
++start(Stage) : void
+.. Static ..
++ {static} main() : void
+}
+class Game.Playing_Field_cell {
+.. Fields  ..
+-cell : Button
+-gameFieldCellStatus : boolean
+.. Methods ..
++returnGameFieldCell() : Button
++returnGameFieldCellStatus() : boolean
++setGameFieldCellStatus(boolean) : void
+}
+class Game.Replay {
+.. Fields  ..
+-anchorPane : AnchorPane
+-backToMainButton : Button
+-backgroundImage : ImageView
+-figureStatisticButton : Button
+-figureTypeStatistic : ArrayList
+-files : File[]
+-filesSizeArray : int[]
+-findSequenceButton : Button
+-hashMap : HashMap
+-loadReplayButton : Button
+-observableList : ObservableList
+-replayListView : ListView
+-replayScene : Scene
+-root : Group
+-scoreStatistic : ArrayList
+-scoreStatisticButton : Button
+-sortByJavaButton : Button
+-sortByScalaButton : Button
+.. Methods ..
+-countFigureStatistic() : void
+-countScoreStatistic() : void
++countStatistic() : void
+-findSequence() : void
++getFilesInfo() : void
++getReplayScene() : Scene
++refreshList() : void
++setButton(double, double, double, double, Button, String, String) : void
++sortListByJava() : void
++sortListByScala() : void
+.. Static ..
++ {static} bindWithApp() : void
+- {static} replayFolderPath : String
+- {static} runWindows : Main
+}
+class Game.MostUsedStatistic {
+.. Methods ..
+.. Static ..
++ {static} countFigureStatistic() : int
++ {static} countScoreStatistic() : double
++ {static} countSum() : int
+}
+class Game.Setting {
+}
+class Game.Playing_Fields {
+.. Fields  ..
+-activeFigure : Figure
+-anchorPane : AnchorPane
+-animationTimer : AnimationTimer
+-autoAnimationTimer : AnimationTimer
+-autoGameButton : Button
+-autoRegime : boolean
+-backToMainButton : Button
+-backgroundImage : ImageView
+-currentScore : int
+-deletedLinesCount : int
+-gameFieldBasicPosition : Point
+-gameFieldFrame : Button
+-gameScene : Scene
+-keyEventProcessing : boolean
+-loosingLabel : Label
+-newFigureMode : int
+-nextFigure : Figure
+-nextFigureCellArray : Playing_Field_cell[][]
+-nextFigureFieldBasicPosition : Point
+-nextFigureLabel : Label
+-playingFieldCellArray : Playing_Field_cell[][]
+-randomGenerator : Random
+-replayAnimationTimer : AnimationTimer
+-replayInStream : DataInputStream
+-replayOutStream : DataOutputStream
+-restartButton : Button
+-root : Group
+-saveGameButton : Button
+-scoresScoreLabel : Label
+-scoresTextLabel : Label
+-speedMode : int
+-tempSpeedMode : int
+-topScoreLabel : Label
+-topTextLabel : Label
+.. Methods ..
+-dropNewFigure(int) : Figure
++getGameFieldScene() : Scene
++load(DataInputStream) : int
++loosingEvent() : void
+-movingAvailable(Point[], Playing_Field_cell[][]) : boolean
+-processBusyLines(Playing_Field_cell[][]) : void
++restartEvent() : void
++runGame() : void
++runReplay(File) : void
+-save(DataOutputStream) : void
++setButton(double, double, double, double, Button, String, String) : void
+-setFieldCellsBusy(Point[], Playing_Field_cell[][]) : void
+-setFieldCellsEmpty(Point[], Playing_Field_cell[][]) : void
+-setKeyboardsEvent() : void
++setLabel(double, double, Label, String, String) : void
++startMainAnimationTimer() : void
+-turnAutoRegime() : void
+-updateField(Playing_Field_cell[][]) : void
+-updateLabel(Label, int) : void
+-updateTopScoreLabel() : void
+.. Static ..
++ {static} bindWithApp() : void
+- {static} autoSpeedMode : int
+- {static} defaultSpeedMode : int
+- {static} fastDroppingSpeed : int
+- {static} replayFolderPath : String
+- {static} replaySpeedMode : int
+- {static} runWindows : Main
+}
+class Game.Figure {
+.. Fields  ..
+#activeStatus : boolean
+#coordinates : Point[]
+#figureType : int
+#positionMode : int
+#positionModeMax : int
+.. Methods ..
++decreasePositionMode() : void
++figureNextDroppingPosition() : Point[]
++figureNextMovingLeftPosition() : Point[]
++figureNextMovingRightPosition() : Point[]
++figureNextRotatePosition() : Point[]
++figureSetPosition(Point[]) : void
++increasePositionMode() : void
++returnCoordinates() : Point[]
++returnFigureType() : int
++returnPositionMode() : int
++returnPositionModeMax() : int
++setNewCoordinates(Point[]) : void
++setPositionMode(int) : void
++setStartPosition(Point) : void
+}
+class Game.Sort {
+.. Methods ..
+.. Static ..
++ {static} sort() : int[]
+}
+
+}
+package Main {
+class Main.music {
+}
+
+}
+package Menu {
+class Menu.Exit {
+.. Fields  ..
+.. Methods ..
++cancelButtonEvent(ActionEvent) : void
++yesButtonEvent(ActionEvent) : void
+.. Static ..
++ {static} bindWithApp() : void
+- {static} runWindows : Main
+}
+class Menu.Menu <<Initializable>>  {
+.. Fields  ..
+.. Methods ..
++initialize(URL, ResourceBundle) : void
++loadButtonEvent(ActionEvent) : void
++quitButtonEvent(ActionEvent) : void
++replayButtonEvent(ActionEvent) : void
++startGameButtonEvent(ActionEvent) : void
+.. Static ..
++ {static} bindWithApp() : void
+- {static} runWindows : Main
+}
+
+}
+Game.Figure <|-- Game.Types_figures.f5
+Game.Figure <|-- Game.Types_figures.f6
+Game.Figure <|-- Game.Types_figures.f3
+Game.Figure <|-- Game.Types_figures.f7
+Game.Figure <|-- Game.Types_figures.f1
+Game.Figure <|-- Game.Types_figures.f4
+Menu.Exit o-- "1..1" Game.Main
+Game.Figure <|-- Game.Types_figures.f2
+Menu.Menu o-- "1..1" Game.Main
+Game.Playing_Fields *-- "0..*(2)" Game.Playing_Field_cell
+Game.Playing_Fields o-- "2..2" Game.Figure
+Game.Main "1..1" o..o "1..1" Game.Playing_Fields
+Game.Main "1..1" o..o "1..1" Game.Replay
+@enduml
